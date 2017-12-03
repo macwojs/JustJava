@@ -25,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        displayPrice(numberOfCoffees * price);
+        //displayPrice(numberOfCoffees * price);
+        String priceMessage = "Total: $"+numberOfCoffees*price+"\nThank you!";
+        displayMessage(priceMessage);
     }
 
     /**
@@ -56,10 +58,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method displays the given price on the screen.
+     * This method displays the given text on the screen in the price place.
      */
-    private void displayPrice(int number) {
+    private void displayMessage(String message) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+        priceTextView.setText(message);
     }
 }
