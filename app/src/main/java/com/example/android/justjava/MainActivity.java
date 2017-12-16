@@ -5,8 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import java.text.NumberFormat;
-
 /**
  * This app displays an order form to order coffee.
  */
@@ -22,22 +20,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method is called when the order button is clicked.
-     */
-    public void submitOrder(View view) {
-        //displayPrice(numberOfCoffees * price);
-        String priceMessage = "Total: $"+numberOfCoffees*price+"\nThank you!";
-        displayMessage(priceMessage);
-    }
-
-    /**
      *  This method increment numberOfCoffees value and it is called when + button is clicked
      */
     public void increment(View view) {
         numberOfCoffees++;
         findViewById(R.id.decrement_button).setEnabled(true);
         if (numberOfCoffees > 99) findViewById(R.id.increment_button).setEnabled(false);
-        display();
+        displayQuantity();
     }
 
     /**
@@ -47,21 +36,38 @@ public class MainActivity extends AppCompatActivity {
         numberOfCoffees--;
         findViewById(R.id.increment_button).setEnabled(true);
         if (numberOfCoffees < 1) findViewById(R.id.decrement_button).setEnabled(false);
-        display();
+        displayQuantity();
     }
+
+    /**
+     * This method is called when the order button is clicked.
+     */
+    public void submitOrder(View view) {
+        String priceMessage = "Total: $"+calculatePrice(numberOfCoffees, price)+"\nThank you!";
+        displayPriceMessage(priceMessage);
+    }
+
+    /**
+     * This method calculate price of order
+     */
+    private int calculatePrice(int quantity, int pricePerCup) {
+        return quantity * pricePerCup;
+    }
+
     /**
      * This method displays the given quantity value on the screen.
      */
-    private void display() {
-        TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        quantityTextView.setText("" + numberOfCoffees);
+    private void displayQuantity() {
+        TextView quantityTextView = findViewById(R.id.quantity_text_view);
+        String quantity = ""+numberOfCoffees;
+        quantityTextView.setText(quantity);
     }
 
     /**
      * This method displays the given text on the screen in the price place.
      */
-    private void displayMessage(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+    private void displayPriceMessage(String message) {
+        TextView priceTextView = findViewById(R.id.price_text_view);
         priceTextView.setText(message);
     }
 }
