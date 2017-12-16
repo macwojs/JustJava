@@ -4,7 +4,7 @@
     <string name="increment">+</string>
     <string name="how_much">2</string>
     <string name="decrement">-</string>
-    <string name="price_text">price</string>
+    <string name="summary_text">order summary</string>
     <string name="price">10,00 zł</string>
     <string name="button">ORDER</string>
 </resources>

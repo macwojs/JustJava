@@ -10,8 +10,9 @@ import android.widget.TextView;
  */
 public class MainActivity extends AppCompatActivity {
 
-    int numberOfCoffees = 2;
-    int price = 5;
+    int quantityOfCoffees = 2;
+    int priceOfCoffee = 5;
+    String name = "Kapitan Kunal";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
      *  This method increment numberOfCoffees value and it is called when + button is clicked
      */
     public void increment(View view) {
-        numberOfCoffees++;
+        quantityOfCoffees++;
         findViewById(R.id.decrement_button).setEnabled(true);
-        if (numberOfCoffees > 99) findViewById(R.id.increment_button).setEnabled(false);
+        if (quantityOfCoffees > 99) findViewById(R.id.increment_button).setEnabled(false);
         displayQuantity();
     }
 
@@ -33,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
      *  This method decrement numberOfCoffees value and it is called when - button is clicked
      */
     public void decrement(View view) {
-        numberOfCoffees--;
+        quantityOfCoffees--;
         findViewById(R.id.increment_button).setEnabled(true);
-        if (numberOfCoffees < 1) findViewById(R.id.decrement_button).setEnabled(false);
+        if (quantityOfCoffees < 1) findViewById(R.id.decrement_button).setEnabled(false);
         displayQuantity();
     }
 
@@ -43,8 +44,9 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        String priceMessage = "Total: $"+calculatePrice(numberOfCoffees, price)+"\nThank you!";
-        displayPriceMessage(priceMessage);
+        int price = calculatePrice(quantityOfCoffees, priceOfCoffee);
+        String priceMessage = createOrderSummary(price, name);
+        displaySubmit(priceMessage);
     }
 
     /**
@@ -55,19 +57,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * This method create summary
+     * @param price of our coffee
+     * @param name of customer
+     * @return summary message
+     */
+    private String createOrderSummary (int price, String name) {
+        return "Name: "+name+"\n"+
+                "Quantity: "+quantityOfCoffees+"\n"+
+                "Total: "+price+"$"+"\n"+
+                "Thank you!";
+    }
+
+
+    /**
      * This method displays the given quantity value on the screen.
+     * We modified quantity_text_view form activity_main.
      */
     private void displayQuantity() {
         TextView quantityTextView = findViewById(R.id.quantity_text_view);
-        String quantity = ""+numberOfCoffees;
+        String quantity = ""+quantityOfCoffees;
         quantityTextView.setText(quantity);
     }
 
     /**
      * This method displays the given text on the screen in the price place.
+     * We modified price_text_view form activity_main.
      */
-    private void displayPriceMessage(String message) {
-        TextView priceTextView = findViewById(R.id.price_text_view);
+    private void displaySubmit(String message) {
+        TextView priceTextView = findViewById(R.id.order_summary_text_view);
         priceTextView.setText(message);
     }
 }
