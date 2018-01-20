@@ -8,12 +8,42 @@
     android:orientation="vertical"
     tools:context="com.example.android.justjava.MainActivity">
 
+    <EditText
+        android:id="@+id/name_input"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="16dp"
+        android:hint="@string/text_box"
+        android:inputType="text"/>
+
     <TextView
+        style="@style/Headers"
+        android:text="@string/toppings"
+        />
+
+    <CheckBox
+        android:id="@+id/cream_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/quantity_text"
+        android:text="@string/cream"
+        android:paddingStart="24dp"
+        android:paddingLeft="24dp"
         android:layout_marginBottom="16dp"
-        android:textAllCaps="true"
+        />
+
+    <CheckBox
+        android:id="@+id/choco_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/choco"
+        android:paddingStart="24dp"
+        android:paddingLeft="24dp"
+        android:layout_marginBottom="16dp"
+        />
+
+    <TextView
+        style="@style/Headers"
+        android:text="@string/quantity_text"
         />
 
     <LinearLayout
@@ -54,11 +84,8 @@
     </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Headers"
         android:text="@string/summary_text"
-        android:layout_marginBottom="16dp"
-        android:textAllCaps="true"
         />
 
     <TextView
@@ -71,12 +98,31 @@
         android:layout_marginBottom="16dp"
         />
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button"
-        android:onClick="submitOrder"
-        />
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/order_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button"
+            android:onClick="orderNow"
+            android:layout_marginRight="16dp"
+            />
+
+        <Button
+            android:id="@+id/mail_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mail_button"
+            android:onClick="orderMail"
+            />
+
+    </LinearLayout>
 
 
 </LinearLayout>
+

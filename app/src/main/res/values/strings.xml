@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Just Java</string>
     <string name="quantity_text">Quantity</string>
@@ -5,6 +6,20 @@
     <string name="how_much">2</string>
     <string name="decrement">-</string>
     <string name="summary_text">order summary</string>
-    <string name="price">10,00 zł</string>
+    <string name="price">20$</string>
     <string name="button">ORDER</string>
+    <string name="toppings">Toppings</string>
+    <string name="cream">Whipped cream</string>
+    <string name="choco">Chocolate</string>
+    <string name="text_box">Name</string>
+    <string name="mail_button">Send order by email</string>
+    <string name="order">Order</string>
+    <string name="toomuch">You can't order more than 100 cup of coffee</string>
+    <string name="tooless">Why you don't want order our coffee :(</string>
+    <string name="name">Name: </string>
+    <string name="add_cream">Add whipped cream? </string>
+    <string name="add_choco">Add chocolate? </string>
+    <string name="quantity">Quantity: </string>
+    <string name="total">Total: </string>
+    <string name="thanks">Thank you!</string>
 </resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Just Java</string>
+    <string name="quantity_text">Ilość</string>
+    <string name="increment">+</string>
+    <string name="how_much">2</string>
+    <string name="decrement">-</string>
+    <string name="summary_text">Podsumowanie zamówienia</string>
+    <string name="price">20$</string>
+    <string name="button">Zamówienie</string>
+    <string name="toppings">Dodatki</string>
+    <string name="cream">Bita śmietana</string>
+    <string name="choco">Czekolada</string>
+    <string name="text_box">Imię</string>
+    <string name="mail_button">Wyślij zamówienie mailem</string>
+    <string name="order">Zamów</string>
+    <string name="toomuch">Nie możesz zamówić więcej niż 100 kaw</string>
+    <string name="tooless">Dlaczego nie chcesz zamówić kawy? :(</string>
+    <string name="name">Imię: </string>
+    <string name="add_cream">Dodać bitą śmietanę? </string>
+    <string name="add_choco">Dodać czekoladę? </string>
+    <string name="quantity">Ilość: </string>
+    <string name="total">Razem: </string>
+    <string name="thanks">Dziękujemy!</string>
+</resources>
